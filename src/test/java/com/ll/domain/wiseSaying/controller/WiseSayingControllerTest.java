@@ -1,11 +1,10 @@
-package domain.wiseSaying.controller;
+package com.ll.domain.wiseSaying.controller;
 
 import com.ll.AppTest;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
-
 
 public class WiseSayingControllerTest {
     @Test
@@ -45,6 +44,9 @@ public class WiseSayingControllerTest {
                 등록
                 현재를 사랑하라.
                 작자미상
+                등록
+                현재를 사랑하라.
+                작자미상
                 """);
 
         assertThat(output)
@@ -63,12 +65,16 @@ public class WiseSayingControllerTest {
                 등록
                 과거에 집착하지 마라.
                 작자미상
+                등록
+                나의 죽음을 적들에게 알리지 말라!
+                이순신
                 목록
                 """);
 
         assertThat(output)
                 .contains("번호 / 작가 / 명언")
                 .contains("----------------------")
+                .contains("3 / 이순신 / 나의 죽음을 적들에게 알리지 말라!")
                 .contains("2 / 작자미상 / 과거에 집착하지 마라.")
                 .contains("1 / 작자미상 / 현재를 사랑하라.");
     }

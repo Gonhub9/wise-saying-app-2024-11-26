@@ -32,7 +32,9 @@ public class App {
                 wiseSayingController.actionAdd();
                 
             }
-
+            else if ( "목록".equals(cmd) ) {
+                wiseSayingController.actionList();
+            }
         }
     }
 }
