@@ -18,6 +18,7 @@ public class TestUtil {
 
     public static void clearSetOutToByteArray(ByteArrayOutputStream byteArrayOutputStream) {
         System.setOut(new PrintStream(new FileOutputStream(FileDescriptor.out)));
+
         try {
             byteArrayOutputStream.close();
         } catch (IOException e) {
