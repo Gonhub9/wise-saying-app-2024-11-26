@@ -12,7 +12,7 @@ public class WiseSayingControllerTest {
     @DisplayName("== 명언 앱 ==")
 
     public void t1() {
-        String output = AppTest.run("종료");
+        String output = AppTest.run("");
 
         assertThat(output)
                 .contains("== 명언 앱 ==");
@@ -47,7 +47,6 @@ public class WiseSayingControllerTest {
 
     @Test
     @DisplayName("등록을 입력하면 내용과 작가를 입력받는다.")
-
     public void t4() {
         String output = AppTest.run("""     
                 등록
