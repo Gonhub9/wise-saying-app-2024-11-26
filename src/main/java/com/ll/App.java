@@ -32,6 +32,7 @@ public class App {
                 wiseSayingController.actionAdd();
                 
             }
+
         }
     }
 }
