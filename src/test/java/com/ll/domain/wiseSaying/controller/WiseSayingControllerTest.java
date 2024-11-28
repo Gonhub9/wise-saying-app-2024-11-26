@@ -1,4 +1,4 @@
-package com.ll.domain.wiseSaying.controller;
+package domain.wiseSaying.controller;
 
 import com.ll.AppTest;
 import org.junit.jupiter.api.DisplayName;
@@ -35,3 +35,4 @@ public class WiseSayingControllerTest {
                 .contains("1번 명언이 등록되었습니다.");
 
     }
+}
