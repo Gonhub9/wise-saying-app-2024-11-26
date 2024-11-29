@@ -20,6 +20,7 @@ public class App {
 
         System.out.println("== 명언 앱 ==");
 
+        label:
         while ( true ) {
             System.out.print("명령) ");
             String cmd = scanner.nextLine();
@@ -29,15 +30,21 @@ public class App {
             String[] cmdBits = cmd.split("\\?");
             String actionName = cmdBits[0];
 
-            if ( "종료".equals(actionName) ) {
-                systemController.actionExit();
-                break;
-            } else if ( "등록".equals(actionName) ) {
-                wiseSayingController.actionAdd();
-            } else if ( "목록".equals(actionName) ) {
-                wiseSayingController.actionList();
-            } else if ( "삭제".equals(actionName) ) {
-                wiseSayingController.actionDelete(cmd);
+            // return은 함수를 끝내는 것, break는 switch문 밖으로 나가는 것
+            // 안하게 되면 등록이 참일 때, 명령어가 이어진다.
+            switch (actionName) {
+                case "종료":
+                    systemController.actionExit();
+                    return;
+                case "등록":
+                    wiseSayingController.actionAdd();
+                    break;
+                case "목록":
+                    wiseSayingController.actionList();
+                    break;
+                case "삭제":
+                    wiseSayingController.actionDelete(cmd);
+                    break;
             }
         }
     }
