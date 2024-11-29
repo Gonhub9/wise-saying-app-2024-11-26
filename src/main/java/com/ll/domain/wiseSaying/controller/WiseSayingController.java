@@ -21,7 +21,7 @@ public class WiseSayingController {
         System.out.println("작가 : ");
         String author = scanner.nextLine();
 
-        WiseSaying wiseSaying =  wiseSayingService.add(content,author);
+        WiseSaying wiseSaying = wiseSayingService.add(content, author);
 
         System.out.println(wiseSaying.getId() + "번 명언이 등록되었습니다.");
     }
@@ -36,5 +36,23 @@ public class WiseSayingController {
             System.out.println(wiseSaying.getId() + " / " + wiseSaying.getAuthor() + " / " + wiseSaying.getContent());
         }
     }
-}
 
+    public void actionDelete(String cmd) {
+        String[] cmdBits = null;
+        int id = 0;
+
+        try {
+            cmdBits = cmd.split("\\?");
+            id = Integer.parseInt(cmdBits[1].split("=")[1]);
+
+        } catch (Exception e) {
+            System.out.println("명령어를 잘못 입력하셨습니다..");
+            return;
+        }
+
+        boolean removed = wiseSayingService.deleteById(id);
+
+        // false면 삭제가 안됐다.
+        System.out.println(id + "번 명언이 삭제되었습니다.");
+    }
+}
